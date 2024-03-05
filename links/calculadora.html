@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Calculadora</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../assets/css/calculadora.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="../index.html">Inicio</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Calculadora</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="./promedio_ponderado.html">Promedio
+								Ponderado</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="./conversion_peso.html">Conversión Peso
+								Chileno</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="./intereses.html">Interés Simple /
+								Compuesto</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="./iva.html">Cálculo IVA</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container my-5">
+		<div class="group">
+			<h1>Calculadora de Operaciones y Promedios:</h1>
+		</div>
+		
+		<div class="row justify-content-center">
+
+			<div class="card mt-2" style="max-width: 800px;">
+				<div class="card-header">
+					<p class="fs-8">Seleccione los botones correspondientes a la operación que desea realizar, así como
+						la
+						cantidad de números que desea utilizar.</p>
+				</div>
+				<div class="card-body m-2 br-4">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<ul class="list-group">
+									<div id="inputBoxes">
+
+									</div>
+								</ul>
+							</div>
+							<div class="col">
+								<div class="d-flex flex-column justify-content-around ">
+									<button class="btn btn-primary m-1" onclick="addInputBox()">Agregar
+										Número</button>
+									<button class="btn btn-primary m-1" value="" onclick="removeInputBox()">Eliminar
+										Número</button>
+
+									<div class="group m-1">									
+										<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+											<input id="display" class="form-control" style="width: 110px;" readonly>
+											<button class="btn btn-suma" type="button"
+												onclick="addToDisplay('+')">+</button>
+											<button class="btn btn-resta" type="button"
+												onclick="addToDisplay('-')">-</button>
+											<button class="btn btn-multiplicacion" type="button"
+												onclick="addToDisplay('*')">*</button>
+											<button class="btn btn-division" type="button"
+												onclick="addToDisplay('/')">/</button>
+											<button class="btn btn-promedio" type="button"
+												onclick="addToDisplay('Promedio')">Promedio</button>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-success"
+										onclick="calculateResult()">Calcular</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card-footer">
+					<div class="form-floating">
+						<input id="output" readonly class="form-control">
+						<label for="output">Resultado</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<section>
+				<h2>Follow</h2>
+				<ul class="icons">
+					<li><a href="https://twitter.com/SekaiDoggo" class="icon brands style2 fa-twitter"><span
+								class="label">Twitter</span></a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+	<!-- Scripts -->
+	<script src="../assets/js/calculator.js"></script>
+
+</body>
+<style>
+	#inputBoxes input {
+		width: 100%;
+	}
+</style>
+
+</html>

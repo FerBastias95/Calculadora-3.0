@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Generic - Phantom by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/calculadora.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">Ipsum veroeros</a></li>
+				<li><a href="generic.html">Tempus etiam</a></li>
+				<li><a href="generic.html">Consequat dolor</a></li>
+				<li><a href="elements.html">Elements</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1 class="col-md-6 mx-auto p-0">CALCULADORA</h1>
+				<div class="group">
+					<div class="row">
+						<div class="col-md-6">
+							<input type="submit" class="button" value="Agregar Número" onclick="addInputBox()">
+						</div>
+						<div class="col-md-6">
+							<input type="submit" class="button" value="Eliminar Número" onclick="removeInputBox()">
+						</div>
+					</div>
+				</div>
+
+				<div class="group">
+					<div class="row">
+						<div class="col-md-6">
+							<input id="display" readonly placeholder="Operación" class="input2">
+						</div>
+						<div class="col-md-6 pt-2">
+							<button class="btn btn-success" type="button" onclick="addToDisplay('+')">+</button>
+							<button class="btn btn-info" type="button" onclick="addToDisplay('-')">-</button>
+							<button class="btn btn-danger" type="button" onclick="addToDisplay('*')">*</button>
+							<button class="btn btn-warning" type="button" onclick="addToDisplay('/')">/</button>
+							<button class="btn btn-secondary" type="button"
+								onclick="addToDisplay('Promedio')">Promedio</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="group">
+					<input type="submit" class="button" value="Calcular" onclick="calculateResult()">
+				</div>
+
+				<div class="group">
+					<h3>Resultado:</h3>
+					<input id="output" readonly class="resultado">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<section>
+				<h2>Follow</h2>
+				<ul class="icons">
+					<li><a href="https://twitter.com/SekaiDoggo" class="icon brands style2 fa-twitter"><span
+								class="label">Twitter</span></a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/calculator.js"></script>
+
+</body>
+
+</html>

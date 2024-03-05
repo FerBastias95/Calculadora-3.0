@@ -1,0 +1,29 @@
+/* Estilos para el botón de suma */
+.btn.btn-suma {
+    background-color: #01FDF6; /* Cambia este color al que desees */
+    border-color: #01FDF6; /* Cambia este color al que desees */
+}
+
+/* Estilos para el botón de resta */
+.btn.btn-resta {
+    background-color: #03fcba; /* Cambia este color al que desees */
+    border-color: #03fcba; /* Cambia este color al que desees */
+}
+
+/* Estilos para el botón de multiplicación */
+.btn.btn-multiplicacion {
+    background-color: #50808E; /* Cambia este color al que desees */
+    border-color: #50808E; /* Cambia este color al que desees */
+}
+
+/* Estilos para el botón de división */
+.btn.btn-division {
+    background-color: #f6ae2d; /* Cambia este color al que desees */
+    border-color: #f6ae2d; /* Cambia este color al que desees */
+}
+
+/* Estilos para el botón de promedio */
+.btn.btn-promedio {
+    background-color: #f26419; /* Cambia este color al que desees */
+    border-color: #f26419; /* Cambia este color al que desees */
+}

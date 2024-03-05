@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> Conversión Peso Chileno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./calculadora.html">Calculadora</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./promedio_ponderado.html">Promedio
+                                Ponderado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Conversión Peso
+                                Chileno</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./intereses.html">Interés Simple /
+                                Compuesto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./iva.html">Cálculo IVA</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-5">
+        <div class="group">
+            <h1>Conversión de moneda:</h1>
+            <div class="col px-0">
+                <p class="fs-5">Elija el tipo de conversión de moneda, e ingrese una cantidad para obtener su
+                    equivalente.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card" style="max-width: 800px;">
+                <div class="card-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="usd-tab" data-bs-toggle="tab" data-bs-target="#USD"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">USD a CLP</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="eur-tab" data-bs-toggle="tab" data-bs-target="#EUR"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">EUR a
+                                CLP</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="USD" role="tabpanel" aria-labelledby="usd-tab">
+                            <label class="label">CLP a USD</label>
+                            <div class="container">
+                                <div class="row">
+                                    <input id="inputCLP" type="number" class="form-control m-2" style="width:45%">
+                                    <input id="outputUSD" type="number" class="form-control m-2" style="width:45%"
+                                        readonly>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <button id="convertButtonCLPtoUSD" class="btn btn-warning"
+                                    onclick="clpToUsd()">Convertir
+                                </button>
+                            </div>
+
+                            <h6 id="conversionRateCLPtoUSD"></h6>
+                            <h6 id="displayConversionRateCLPtoUSD"></h6>
+                            <div class="group">
+                                <label class="label">USD a CLP</label>
+                                <div class="container">
+                                    <div class="row">
+                                        <input id="inputUSD" type="number" class="form-control m-2" style="width:45%">
+                                        <input id="outputCLP" type="number" class="form-control m-2" style="width:45%"
+                                            readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <button id="convertButtonUSDtoCLP" class="btn btn-warning"
+                                    onclick="UsdToClp()">Convertir</button>
+                            </div>
+                            <h6 id="conversionRateUSDtoCLP"></h6>
+                            <h6 id="displayConversionRateUSDtoCLP"></h6>
+                        </div>
+
+                        <div class="tab-pane fade" id="EUR" role="tabpanel" aria-labelledby="eur-tab">
+                            <label class="label">CLP a EUR</label>
+                            <div class="row">
+                                <input id="inputCLP2" type="number" class="form-control m-2" style="width:45%">
+                                <input id="outputEUR" type="number" class="form-control m-2" style="width:45%" readonly>
+                            </div>
+
+                            <div class="group">
+                                <button id="convertButtonCLPtoEUR" class="btn btn-warning"
+                                    onclick="clpToEUR()">Convertir</button>
+                            </div>
+
+                            <h6 id="conversionRateCLPtoEUR"></h6>
+                            <h6 id="displayConversionRateCLPtoEUR"></h6>
+
+                            <div class="group">
+                                <label class="label">EUR a CLP</label>
+                                <div class="container">
+                                    <div class="row">
+                                        <input id="inputEUR" type="number" class="form-control m-2" style="width:45%">
+                                        <input id="outputCLP2" type="number" class="form-control m-2" readonly
+                                            style="width:45%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <button id="convertButtonEURtoCLP" class="btn btn-warning"
+                                    onclick="EURToClp()">Convertir</button>
+                            </div>
+                            <h6 id="conversionRateEURtoCLP"></h6>
+                            <h6 id="displayConversionRateEURtoCLP"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="../assets/js/conversion.js"></script>
+    <script>
+        document.getElementById('convertButtonCLPtoUSD').addEventListener('click', getConversionRateCLPtoUSD);
+        document.getElementById('convertButtonUSDtoCLP').addEventListener('click', getConversionRateUSDtoCLP);
+        document.getElementById('convertButtonCLPtoEUR').addEventListener('click', getConversionRateCLPtoEUR);
+        document.getElementById('convertButtonEURtoCLP').addEventListener('click', getConversionRateEURtoCLP);
+    </script>
+
+</body>
