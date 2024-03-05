@@ -6,7 +6,7 @@ window.onload = function () {
 
 function updateValorFinals() {
     var rows = document.querySelectorAll('#inputBoxes tr');
-    rows.forEach(function(row) {
+    rows.forEach(function (row) {
         var valorOriginalInput = row.querySelector('.valorOriginal');
         var valorFinalInput = row.querySelector('.valorFinal');
 
@@ -24,7 +24,7 @@ function addInputBoxes() {
     var newRow = document.createElement('tr');
 
     // Create and append 4 cells for each row
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 5; i++) {
         var newCell = document.createElement('td');
 
         if (i === 0) {
@@ -35,15 +35,20 @@ function addInputBoxes() {
         } else if (i === 1) {
             var numericInput = document.createElement('input');
             numericInput.type = 'number';
-            numericInput.className = 'form-control valorOriginal';
+            numericInput.className = 'form-control cantidad';
             newCell.appendChild(numericInput);
         } else if (i === 2) {
+            var numericInput = document.createElement('input');
+            numericInput.type = 'number';
+            numericInput.className = 'form-control valorOriginal';
+            newCell.appendChild(numericInput);
+        } else if (i === 3) {
             var numericInput = document.createElement('input');
             numericInput.type = 'number';
             numericInput.className = 'form-control valorFinal';
             numericInput.readOnly = true;
             newCell.appendChild(numericInput);
-        } else if (i === 3) {
+        } else if (i === 4) {
             var button = document.createElement('button');
             button.type = 'button';
             button.className = 'btn btn-danger';
@@ -56,7 +61,7 @@ function addInputBoxes() {
             trashCanIcon.style.height = '20px'; // Adjust the height as needed
             button.appendChild(trashCanIcon);
 
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 // Check if there is more than one row before removing
                 if (inputBoxes.rows.length > 1) {
                     inputBoxes.removeChild(newRow);
@@ -72,59 +77,30 @@ function addInputBoxes() {
     inputBoxes.appendChild(newRow);
 
     // Add event listener to calculate valorFinal when valorOriginal or taxes change
-    newRow.addEventListener('input', function(event) {
+    newRow.addEventListener('input', function (event) {
         if (event.target.classList.contains('valorOriginal') || event.target.classList.contains('taxes')) {
+            calculateValorFinal(newRow);
+        } else if (event.target.classList.contains('cantidad')) { // Add event listener for cantidad input
             calculateValorFinal(newRow);
         }
     });
 }
 
+
 function calculateValorFinal(row) {
     var valorOriginalInput = row.querySelector('.valorOriginal');
     var valorFinalInput = row.querySelector('.valorFinal');
     var valorIVAInput = document.getElementById('valorIVA');
-
-    // Calculate valorFinal based on valorOriginal and taxes (valorIVA)
-    var valorFinal = parseFloat(valorOriginalInput.value) + parseFloat(valorOriginalInput.value) * parseFloat(valorIVAInput.value)/100;
+    
+    // Get the cantidad input from the current row
+    var cantidadInput = row.querySelector('.cantidad');
+    
+    // Get the value of the cantidad input
+    var cantidad = cantidadInput.value.trim() !== '' ? parseFloat(cantidadInput.value) : 0;
+    
+    // Calculate valorFinal based on valorOriginal, valorIVA, and cantidad
+    var valorFinal = cantidad * (parseFloat(valorOriginalInput.value) + parseFloat(valorOriginalInput.value) * parseFloat(valorIVAInput.value) / 100);
 
     // Update the valorFinal input with the calculated value
     valorFinalInput.value = isNaN(valorFinal) ? '' : valorFinal.toFixed(2);
-}
-
-function calculateResult() {
-    var valuesArray = [];
-    var output = document.getElementById('output');
-    var inputsNotas = document.getElementsByClassName('first-column');
-    var inputsPonderaciones = document.getElementsByClassName('second-column');
-    var result = 0;
-    var sumaPonderacion = 0;
-
-    for (var i = 0; i < inputsNotas.length; i++) {
-        var firstInput = parseFloat(inputsNotas[i].value);
-        var secondInput = parseFloat(inputsPonderaciones[i].value);
-
-        if (!isNaN(firstInput) && !isNaN(secondInput)) {
-            valuesArray.push([firstInput, secondInput]);
-            result += firstInput * secondInput;
-            sumaPonderacion += secondInput;
-        }
-    }
-    if (sumaPonderacion == 100) {
-        output.value = result / 100;
-    } else output.value = "La suma de la ponderación no es igual al 100%";
-
-}
-
-function calculateSum() {
-    var outputInput = document.getElementById('output');
-    var rows = document.querySelectorAll('#inputBoxes tr');
-
-    var sum = 0;
-    rows.forEach(function(row) {
-        var valorFinalInput = row.querySelector('.valorFinal');
-        sum += parseFloat(valorFinalInput.value) || 0;
-    });
-
-    // Update the output input with the calculated sum
-    outputInput.value = isNaN(sum) ? '' : sum.toFixed(2);
 }
