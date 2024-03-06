@@ -39,8 +39,8 @@ function removeInputBoxes() {
     // Get all rows in the container
     var rows = inputBoxes.querySelectorAll('.row');
 
-    // If there are rows, remove the last row
-    if (rows.length > 0) {
+    // If there is more than one row, remove the last row
+    if (rows.length > 2) {
         var lastRow = rows[rows.length - 1];
         inputBoxes.removeChild(lastRow);
     }
