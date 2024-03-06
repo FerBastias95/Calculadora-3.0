@@ -1,5 +1,11 @@
 window.onload = function () {
     addInputBox();
+    calculateResult(); // Calcular el resultado inicial
+    addChangeListener(); // Agregar event listener a los inputs
+    var operatorInput = document.getElementById('display');
+    operatorInput.addEventListener('input', function() {
+        calculateResult(); // Calcular el resultado cada vez que cambia el operador matemático
+    });
 }
 
 function addInputBox() {
@@ -8,18 +14,30 @@ function addInputBox() {
     inputBox.type = 'text';
     inputBox.className = 'list-group-item list-group-item-primary rounded m-1';
     inputBoxes.appendChild(inputBox);
+    addChangeListener(); // Agregar event listener al nuevo input
 }
 
 function removeInputBox() {
     var inputBoxes = document.getElementById('inputBoxes');
-    if (inputBoxes.childElementCount > 0) {
+    if (inputBoxes.childElementCount > 1) {
         inputBoxes.removeChild(inputBoxes.lastChild);
+        calculateResult(); // Calcular el resultado cada vez que se elimina un input
     }
 }
 
 function addToDisplay(value) {
     var display = document.getElementById('display');
     display.value = value;
+    calculateResult(); // Calcular el resultado cada vez que se cambia el operador matemático
+}
+
+function addChangeListener() {
+    var inputBoxes = document.getElementById('inputBoxes').querySelectorAll('input');
+    inputBoxes.forEach(function(input) {
+        input.addEventListener('input', function() {
+            calculateResult(); // Calcular el resultado cada vez que cambia el contenido de los inputBoxes
+        });
+    });
 }
 
 function calculateResult() {
