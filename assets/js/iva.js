@@ -55,10 +55,10 @@ function addInputBoxes() {
 
             // Add trash can icon
             var trashCanIcon = document.createElement('img');
-            trashCanIcon.src = 'https://static-00.iconduck.com/assets.00/delete-icon-256x256-9x92mtma.png'; // Replace with the actual path
+            trashCanIcon.src = 'https://static-00.iconduck.com/assets.00/delete-icon-256x256-9x92mtma.png';
             trashCanIcon.alt = 'Delete';
-            trashCanIcon.style.width = '20px'; // Adjust the width as needed
-            trashCanIcon.style.height = '20px'; // Adjust the height as needed
+            trashCanIcon.style.width = '20px';
+            trashCanIcon.style.height = '20px';
             button.appendChild(trashCanIcon);
 
             button.addEventListener('click', function () {
@@ -76,7 +76,6 @@ function addInputBoxes() {
     // Append the new row to the tbody
     inputBoxes.appendChild(newRow);
 
-    // Add event listener to calculate valorFinal when valorOriginal or taxes change
     newRow.addEventListener('input', function (event) {
         if (event.target.classList.contains('valorOriginal') || event.target.classList.contains('taxes')) {
             calculateValorFinal(newRow);
