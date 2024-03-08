@@ -50,7 +50,7 @@
         <div class="group">
             <h1>Conversión de Unidades:</h1>
             <div class="col px-0">
-                <p class="fs-5">Elija el tipo de unidad que desea convertir, junto con el valor que desea consultar.</p>
+                <p class="fs-5">Elija el tipo de unidad que desea convertir, junto con.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -103,10 +103,10 @@
                                 <div class="card-body">
                                     <div class="row g-3 m-1">
                                         <div class="col">
-                                            <input type="text" class="form-control" id="valor_distancia1" placeholder="Valor a convertir">
+                                            <input type="text" class="form-control" id="valor_distancia1" placeholder="Valor a convertir" disabled>
                                         </div>
                                         <div class="col">
-                                            <input type="text" class="form-control" id="valor_distancia2" readonly placeholder="Conversión">
+                                            <input type="text" class="form-control" id="valor_distancia2" readonly placeholder="Conversión" disabled>
                                         </div>
                                     </div>
                                     <div class="row g-3 m-1 mb-1">
@@ -150,8 +150,8 @@
                                     </div>
                                     <div class="row g-3 m-1 mb-1">
                                         <div class="col">
-                                            <select class="form-select" id="unidad_masa1" aria-label="Unidad de masa 1">
-                                                <option selected disabled>Seleccione una unidad</option>
+                                            <select class="form-select" id="unidad_masa1" aria-label="Default select example">
+                                                <option selected>Unidad 1</option>
                                                 <option value="1">Kilogramo</option>
                                                 <option value="2">Gramo</option>
                                                 <option value="3">Miligramo</option>
@@ -160,8 +160,8 @@
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <select class="form-select" id="unidad_masa2" aria-label="Unidad de masa 2">
-                                                <option selected disabled>Seleccione una unidad</option>
+                                            <select class="form-select" id="unidad_masa2" aria-label="Default select example">
+                                                <option selected >Unidad 2</option>
                                                 <option value="1">Kilogramo</option>
                                                 <option value="2">Gramo</option>
                                                 <option value="3">Miligramo</option>
@@ -173,7 +173,6 @@
                                 </div>
                             </div>
                         </div>
-                        
 
                         <div class="tab-pane fade" id="volumen" role="tabpanel" aria-labelledby="volumen-tab">
                             <div class="card border-0">
@@ -188,8 +187,8 @@
                                     </div>
                                     <div class="row g-3 m-1 mb-1">
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_volumen1">Unidad 1</option>
+                                            <select class="form-select" id="unidad_volumen1" aria-label="Default select example">
+                                                <option selected>Unidad 1</option>
                                                 <option value="1">Litro (L)</option>
                                                 <option value="2">Mililitro (mL)</option>
                                                 <option value="3">Metro Cúbico (m³)</option>
@@ -200,8 +199,8 @@
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_volumen2">Unidad 2</option>
+                                            <select class="form-select" id="unidad_volumen2" aria-label="Default select example">
+                                                <option selected>Unidad 2</option>
                                                 <option value="1">Litro (L)</option>
                                                 <option value="2">Mililitro (mL)</option>
                                                 <option value="3">Metro Cúbico (m³)</option>
@@ -229,8 +228,8 @@
                                     </div>
                                     <div class="row g-3 m-1 mb-1">
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_tiempo1">Unidad 2</option>
+                                            <select class="form-select" id="unidad_tiempo1" aria-label="Default select example">
+                                                <option selected>Unidad 2</option>
                                                 <option value="1">Segundo</option>
                                                 <option value="2">Minuto</option>
                                                 <option value="3">Hora</option>
@@ -241,8 +240,8 @@
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <select class="form-select presion1" aria-label="Default select example">
-                                                <option selected id="unidad_tiempo2">Unidad 2</option>
+                                            <select class="form-select presion1" id="unidad_tiempo2" aria-label="Default select example">
+                                                <option selected>Unidad 2</option>
                                                 <option value="1">Segundo</option>
                                                 <option value="2">Minuto</option>
                                                 <option value="3">Hora</option>
@@ -270,16 +269,16 @@
                                     </div>
                                     <div class="row g-3 m-1 mb-1">
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_temperatura1">Unidad 1</option>
+                                            <select class="form-select" id="unidad_temperatura1" aria-label="Default select example">
+                                                <option selected>Unidad 1</option>
                                                 <option value="1">Celsius (°C)</option>
                                                 <option value="2">Fahrenheit (°F)</option>
                                                 <option value="3">Kelvin (K)</option>
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_temperatura2">Unidad 2</option>
+                                            <select class="form-select" id="unidad_temperatura2" aria-label="Default select example">
+                                                <option selected>Unidad 2</option>
                                                 <option value="1">Pascal</option>
                                                 <option value="2">Bares</option>
                                                 <option value="3">Atmosferas</option>
@@ -311,8 +310,8 @@
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_velocidad2">Unidad 1</option>
+                                            <select class="form-select" id="unidad_velocidad2" aria-label="Default select example">
+                                                <option selected>Unidad 1</option>
                                                 <option value="1">Kilómetro por hora (km/h)</option>
                                                 <option value="2">Metro por segundo (m/s)</option>
                                                 <option value="3">Millas por hora (mph)</option>
@@ -336,8 +335,8 @@
                                     </div>
                                     <div class="row g-3 m-1 mb-1">
                                         <div class="col">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected id="unidad_presion1">Unidad 1</option>
+                                            <select class="form-select" id="unidad_presion1" aria-label="Default select example">
+                                                <option selected>Unidad 1</option>
                                                 <option value="1">Pascal</option>
                                                 <option value="2">Bares</option>
                                                 <option value="3">Atmosferas</option>
@@ -346,8 +345,8 @@
                                             </select>
                                         </div>
                                         <div class="col">
-                                            <select class="form-select presion1" aria-label="Default select example">
-                                                <option selected id="unidad_presion2">Unidad 2</option>
+                                            <select class="form-select presion1" id="unidad_presion2" aria-label="Default select example">
+                                                <option selected>Unidad 2</option>
                                                 <option value="1">Pascal</option>
                                                 <option value="2">Bares</option>
                                                 <option value="3">Atmosferas</option>

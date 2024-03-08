@@ -189,6 +189,133 @@ function convertirMasa() {
     document.getElementById('valor_masa2').value = resultado.toFixed(2);
 }
 
+function convertirMasa() {
+    const valor1 = parseFloat(document.getElementById('valor_masa1').value);
+    const unidad1 = parseInt(document.getElementById('unidad_masa1').value);
+    const unidad2 = parseInt(document.getElementById('unidad_masa2').value);
+
+    let resultado;
+
+    switch (unidad1) {
+        case 1: // Kilogramo
+            switch (unidad2) {
+                case 1: // Kilogramo
+                    resultado = valor1;
+                    break;
+                case 2: // Gramo
+                    resultado = valor1 * 1000;
+                    break;
+                case 3: // Miligramo
+                    resultado = valor1 * 1000000;
+                    break;
+                case 4: // Libra
+                    resultado = valor1 * 2.20462;
+                    break;
+                case 5: // Onza
+                    resultado = valor1 * 35.274;
+                    break;
+            }
+            break;
+        case 2: // Gramo
+            switch (unidad2) {
+                case 1: // Kilogramo
+                    resultado = valor1 / 1000;
+                    break;
+                case 2: // Gramo
+                    resultado = valor1;
+                    break;
+                case 3: // Miligramo
+                    resultado = valor1 * 1000;
+                    break;
+                case 4: // Libra
+                    resultado = valor1 * 0.00220462;
+                    break;
+                case 5: // Onza
+                    resultado = valor1 * 0.035274;
+                    break;
+            }
+            break;
+        case 3: // Miligramo
+            switch (unidad2) {
+                case 1: // Kilogramo
+                    resultado = valor1 / 1000000;
+                    break;
+                case 2: // Gramo
+                    resultado = valor1 / 1000;
+                    break;
+                case 3: // Miligramo
+                    resultado = valor1;
+                    break;
+                case 4: // Libra
+                    resultado = valor1 * 2.20462e-6;
+                    break;
+                case 5: // Onza
+                    resultado = valor1 * 3.5274e-5;
+                    break;
+            }
+            break;
+        case 4: // Libra
+            switch (unidad2) {
+                case 1: // Kilogramo
+                    resultado = valor1 * 0.453592;
+                    break;
+                case 2: // Gramo
+                    resultado = valor1 * 453.592;
+                    break;
+                case 3: // Miligramo
+                    resultado = valor1 * 453592;
+                    break;
+                case 4: // Libra
+                    resultado = valor1;
+                    break;
+                case 5: // Onza
+                    resultado = valor1 * 16;
+                    break;
+            }
+            break;
+        case 5: // Onza
+            switch (unidad2) {
+                case 1: // Kilogramo
+                    resultado = valor1 * 0.0283495;
+                    break;
+                case 2: // Gramo
+                    resultado = valor1 * 28.3495;
+                    break;
+                case 3: // Miligramo
+                    resultado = valor1 * 28349.5;
+                    break;
+                case 4: // Libra
+                    resultado = valor1 * 0.0625;
+                    break;
+                case 5: // Onza
+                    resultado = valor1;
+                    break;
+            }
+            break;
+    }
+
+    document.getElementById('valor_masa2').value = resultado.toFixed(2);
+}
+
+function convertirVolumen() {
+
+}
+
+function convertirTiempo() {
+
+}
+
+function convertirTemperatura() {
+
+}
+
+function convertirVelocidad() {
+
+}
+
+function convertirPresion() {
+
+}
 // Evento para actualizar la conversión al cambiar una unidad de medida de masa
 document.getElementById('unidad_masa1').addEventListener('change', convertirMasa);
 document.getElementById('unidad_masa2').addEventListener('change', convertirMasa);
@@ -220,5 +347,30 @@ document.getElementById('unidad_masa1').addEventListener('change', () => habilit
 document.getElementById('unidad_masa2').addEventListener('change', () => habilitarCampos('masa'));
 document.getElementById('valor_masa1').addEventListener('input', convertirMasa);
 
+document.getElementById('unidad_volumen1').addEventListener('change', () => habilitarCampos('volumen'));
+document.getElementById('unidad_volumen2').addEventListener('change', () => habilitarCampos('volumen'));
+document.getElementById('valor_volumen1').addEventListener('input', convertirVolumen);
+
+document.getElementById('unidad_tiempo1').addEventListener('change', () => habilitarCampos('tiempo'));
+document.getElementById('unidad_tiempo2').addEventListener('change', () => habilitarCampos('tiempo'));
+document.getElementById('valor_tiempo1').addEventListener('input', convertirTiempo);
+
+document.getElementById('unidad_temperatura1').addEventListener('change', () => habilitarCampos('temperatura'));
+document.getElementById('unidad_temperatura2').addEventListener('change', () => habilitarCampos('temperatura'));
+document.getElementById('valor_temperatura1').addEventListener('input', convertirTemperatura);
+
+document.getElementById('unidad_velocidad1').addEventListener('change', () => habilitarCampos('velocidad'));
+document.getElementById('unidad_velocidad2').addEventListener('change', () => habilitarCampos('velocidad'));
+document.getElementById('valor_velocidad1').addEventListener('input', convertirVelocidad);
+
+document.getElementById('unidad_presion1').addEventListener('change', () => habilitarCampos('presion'));
+document.getElementById('unidad_presion2').addEventListener('change', () => habilitarCampos('presion'));
+document.getElementById('valor_presion1').addEventListener('input', convertirPresion);
+
 habilitarCampos('distancia');
 habilitarCampos('masa');
+habilitarCampos('volumen');
+habilitarCampos('tiempo');
+habilitarCampos('temperatura');
+habilitarCampos('velocidad');
+habilitarCampos('presion');
